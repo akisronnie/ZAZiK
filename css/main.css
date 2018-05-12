@@ -9,3 +9,6 @@ body {background-color: rgb(43, 43, 43); }
 font-size: 22px; color:rgb(167, 190, 161); border-radius: 20px; padding: 25px;margin-left: 32px; margin-right: 32px;}
 
 .qwe1{background-color: black; color: white;}
+
+.tilt {-webkit-transition: all 0.5s ease;}
+.tilt :hover {-webkit-transform: rotate(-10deg);}
