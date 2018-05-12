@@ -1,0 +1,11 @@
+
+/*.navbar-nav .nav-item .nav-link {font-size: 20px; font-weight: 600;color: rgb(49, 156, 54); }
+.navbar-nav .nav-item :hover {background-color:rgb(49, 156, 54);border-radius: 15px;text-decoration: underline; }*/
+body {background-color: rgb(43, 43, 43); }
+.navbar {
+    background-image: url(http://user-master.org/media/k2/items/cache/c10c64c27e0606d1654b81b9bb482558_XL.jpg);
+     }
+.qwe{background-image: url(https://i.ytimg.com/vi/RkgEMkTo5vA/maxresdefault.jpg);
+font-size: 22px; color:rgb(167, 190, 161); border-radius: 20px; padding: 25px;margin-left: 32px; margin-right: 32px;}
+
+.qwe1{background-color: black; color: white;}
