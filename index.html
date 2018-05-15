@@ -8,13 +8,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>ZAZiK SU</title>
   </head>
   <body>
      
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainmenu">
-    <a class="navbar-brand tilt" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Seattle_redhawks_logo.png"  width="40"></a>
+    <a class="navbar-brand tilt" href="#" id="app-2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Seattle_redhawks_logo.png"  width="40" v-bind:title="message">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,23 +26,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-              <a class="nav-link " href="#"> <button class="btn btn-outline-success my-2 my-sm-0 disabled"   type="submit" style="border:none;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAj4SURBVGhD7Vppb1RVGK5R/4G7fjRuMS7xB5gYmOnCFjfQBAUFMcYPIJsiYgJtZymLgMqOGpZCoYAoBhOltXTm3unMtFMotFPaKV0AWdpCKV2mMz2+z5lzpnfa6cy97a0a45OczM2955z3ee89593OZPyPJHglT3nQ4nDNsOQry6029+4ch3JsSoGnDA3XVruyC8/QB33FsH8HLHmup4i0bUqB2kBEGZEeeG97oOfzw/VR289NbP2vzbzhGvfwDH1ozCDGWGxKPuYQ0/3NYOyuyXYli4h4QH7Otqq+rSVtrPTCbdbYGWVNNwdTNvRBX4yZs7WqD3NkO1Q35hQSJh6ZNteLOU7Vl+lQoquKL0TKQ91JyRppmOOLI/URzElzV1hs6vNCnPl4+cuSe7LsbjuELSmsDftaexPI4C2fCnaxb0+1sk8PBtnc7QH26gYvI2K84ZqWFX+GPugb6kxUqKKlhy3eXxu2kgzIgkwh3hxMcpQ/kl2geqev84SPBdoThFe29fE9MGuzn5GS7MNd1WzzryF2zHeFldXeYJVNN3nD9VHvFbaJnqFPJi2nmV/7+diqS30Jcx4N3GCQle1UFGuu92FBY3zIyvc8ke1UL83fWd0P0lJYzZ9hlvtjI8spUNkCIgbiHd1hphfoC8U+oLGYI++nEJ9Tzu9v62Xv76juh2xwiLEZIyz57seznGrHwn3nw8EbkbiQg95rfKnM3xlgyoUONijIJcPt/lgbDRiLOebtCLDXvvLyuaWcOpK5aO/5MDiAi6BlDJl29TG8jU/2nh9oaI9ZIvyuoa9A99l+dxsbiKZSIabAjsoob6mUAQYig3xOzJ17PMQaOoZkLtp7boC+WnNOrvtRQU8fXtrmuxfWA8tJfgn80kZkMzf72Lm2LiE+NYwoInG2tYu9ucnHFhfWcplS9jxaZvRl1DeKiu4WNNMDFgObTe4JvBUoMXtLJbvU0StE6gMU6E6hRPP1Hnay+irrH4iKO4y1tfdyWcsO1MW/jJ/2DDiRQcmPsUyDyc7yF8hBRbXWCcvpDXpLRpVIh+td/XxfwCHCWGgBWZCJZSZ5wJrBNGc6lecE3VFAHpvWohd+Qg4+QJsPfqCGPrmZwO5acbCWK4EWaL4Ve6ABllmWQ2WHfNfjysDP0D7yCMbJkZmvZMPhSWd39krsjRXSJjQbJ6quxpVY/0ujuDsSe8tbOYezwjTDaYKj1e6yCtojQW9eXVVcH5Ha47PCxKazTkZx5WYfm7G+gisx+9tK1t0XEU9GIhyJkj8JUNA5tMRWFgcj5KDdgnYiMvPUZzCxjJ2w0eGo1IYOMaU5wCtZuv8cVwLeHV4/HVzBds5FRgCnG7v5+KRRs5Us1ZxtgT6pNUIHeF1zvwXjmxok0BDK6AE4YGVsIE6S37uImm3uXEF/CMgNEFajE4I5xEHDLcl40UaWaNo6D1eCwnfW0z/6khqOI97L7K1v/PFAE4En5TX1gn4MyNaQ6CBHQKff627xALDzjv7YKR2ig4Ns4Z6a2JKiuWGRjKD9dpgvxZL6Ls4Rv+CcmVd2v1CDYipKPZG1yaQI2iJCNROH1EvxJbXt94virjF8sLOabRGrBlynrKVM06FME2ogOFSWIwVFB7TlRUHd61cPLpL3phfFlUBwqPXiRrDxZIitIG6SJ+3pHtrby4Qa2OjKrpWUT8sOSIDM2h8RMt0ff3+GKwHnVnf5tnhiHNgnFNrHFVlxuD5isSs7hBoZGZQvH0dxQHZAiF5OJk8C8ZLeoE+L0LU75Cf88SW1u7RFPNGH4XLL6tq5c5Q84Vso+Toq1MjImLpWLdWaNthsXyhm3zGR0QhW4qPvquNKoCFU14tkcn2hTs5N8gRn2iclQo3RFOnkg8ejyAKy/VpFKhpic+rBmBRJtrRO02eUwESpQvHRgKW1gCwNzCYUAQmjymjlpl1aJCRhs2NDIZ82CyAPJcaijBbFFZfZe9rNfiiYuNlhfudqzC9KNqh2mAkzlBlhfrdW9SaaX5s6faIdIjBeZeAQZRgFrjTHwGSbe6pQg7LCAtcD2hAFxTOsayPlHb0YrkwT7SM9kCFKqQhRwJHXj9f67hNqxDA8aJw1AUGjhFaZ32qui7upgf0xImh0qkFBfwiois/ZOhTGw7RNRBgvgS8BJfT4FvSYx8P4Fs4N7R0K4y129xpBfwiT7MrTeEMysUISg7eG4tk/DUQZORSrDU+sRq1AItVFVVxqjTImgjyzU10jQKo7d3sVs2v83MrDwQi9ZJegPRI4n0BijwQfA5DwwwHtc5lffNCLPadb2esbfazmaqz44GkWxQebe5KgnRyoMKLkIrUv8l7jZUyzy0F6cKblFo+Yi/1D5aBF+86HcxyqKuiODl6gI41RDJOD845PTIEuFWSBznFiaEkVV8YKdJPzXM8KuqlBDtKG8qS/LVbfQskU5UuUMVHONALESzLo0wttyVQ6aXCZttYTtjqSFBxGAz+doo2PwrG2kLyksJa/Jb35NhQwGjljOb2+0cuWFtYlFLH5WUmB6jZUxAZwrECWoRkl/fixQkeUF+2wZ1ABTOcDjCiCuX4oa+F7AhaqUXOssHBf7FghodBgBPKgB4ctOHTBxGioxcKaISV21bendJpQIFUKMEiD4SdgYjEn9oGUIw96yAC1j/mgR0IeveHT+sWeQYNpRj4Ap4niGUIII7EZYieMgZ+Cs8NXOCdMLBpkQWaOU2kdtxISOJDEwSQMgNaaocHbIpx5+5tKHtQhQkW4DZI4APU33eQN17iHZ+iDvhiDsGP4YSi+ijwMzXZ6HhI0zAEMAKwZzB/8DByTVjiCORTNUHdCzoAEiB9P0xdDwzUSNjzjfy6gvjIAlA1zwk/wMxCHutr042ktcMiC8wl4V1TFzfjDAGInzIU5c5weRbefMAM4n8DfLhC8zaZIdEtJK/8i0u6naugj/1yAsSI3caUNOyYSKO0jnEZBGYkOERpABfCzoroojIH8U00+BaC4h2fow5MiyicsNvdqq6P8STHdvwPINJF6EsmlKApkFahHSMEyIvwHrun+djxDnzH7hP82MjL+ArwAlZ7xnZ4FAAAAAElFTkSuQmCC" class="icons"><spam id="clock"> 00:00:00</spam></button></a>
+              <a class="nav-link " href="#"> 
+                <button class="btn btn-outline-success my-2 my-sm-0 disabled"   type="submit" style="border:none;">
+                    <i class="far fa-clock"></i><spam id="clock"> 00:00:00</spam></button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="abc"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJASURBVGhD7ZlPa9RAGIf3K/gNPPgB/B7iUW962YD0VpDVm9iTHtSDolSsh1ahIP7DJtlt0vZgoVLEul2pW+1uij27x0x2JoXxnTIVSd7YSXZCNMwPnmPm/T2ESXYnDRMTE5N6Z3mfnvWC+KEXMA/wJ+VVnwWLO3SE8bTLDq6vRRuWE64Az5pueF7WmCx+cHgZhsd+EPOyme9RfsUl3HJSzMo6xdLej077ARtjQ3Vjf2d8qo1KHNG0yQVZK39AooUNLYMnWwwVOAZElmSt/IEBD5IDy+L+R4oK/MYm27JW/sAGf4QNLYOTROCO9GSt/DEiBahE5M23mM9+ooV4B08nbM25LvvcdMjjTGxyQ9bKnyyRue4JG/MvLO7gIjDrlhyrP1kioszM+rgQr/vp9QSViJSBEVFJloizx/iLr2p4w/T1GJWI5Nns7gDf3EkqEZnfpnzaJ0q4g/T1GJWIlIERUUntRWrzZq+NyDK8G1x4lxQB1kytJ6hEpAyMiEqyRBZ6lLdWIyXa5ieKxmSJiH95z7+oAWukrseoRKQMjIhK/jsRaymcbjrh7SQ316OtO5tjroOs05NjtIiIMyPsiaOTl30jop5/QcQfxjOyTvHAIDs5WDfiIw4qIPGCw0uyTvFYNrmIDdeJOJzDBI4YspH9g5+SdSaLOF/FCuhEnP0mJbwhI94gPidr6In48Gg54QI8ev0/meqQD1dXooPWWvTz2ioZTcK9Tbr7dpe+h7vQgQ1+t7MXnZHjTUxMTGqdRuMXfwRswryHyccAAAAASUVORK5CYII=" class="icons" id="abc"> История</button></a>
+          <a class="nav-link " href="#"><button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="abc">
+            <i class="fas fa-history"></i> История</button></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" id="abc" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVGhD7ZlNSwJBGMf9Gn2fLl2tjxB061aHrgVdKijqEvRyCYLoEBqBb5hrQVRU9iK97JYGGqiUFO7LrE4ztocd3WXRmd2mmD/8Ls7wzPOTdWYHQyIiIiIi3CQhg5GYbBzEFCPOFainuAyGrTa9E1OAFFcA5BHUW8Zq0zuci0hWm94RIgEgRHgjcJHzsgnvKk0qbhHpF7Iulchi9gNORSuuzKfficUOCwC2IJsU602iNpVIeLUAByZzrgwtK8RiUhFYbdCn/NkialOJjO++wcEl2ZWx7RKxWIahSImlSK8kEK/okag1WlRUEaclk6gdqIifCJF+SaFtM1s0qcCbRmddKpHovQ738porkQedWAxLGKb1a6XMY01sv/9YpFeSzwA2AJuzPV9l+Gj1Az5L8HsSDSn0hXTWDVzEL4QIb1CJLJxocCKpOoLH7HP9hkpkWtLg6H7DETxmn+s3TETWL1WYK+tttq5/PrOLbJx9Ob7m04CvEPZemIhE7jVoGEabhNItsnJcdzwwacCHsb2XQER2blTHqzAN+Jpt74WJyExWhZtXWpvZI7VLJAiYiDjxp0TWLnQ4h7ZZJ/CYfa7fUInwhBDhjV5FMk5FeAD3ZrXpHZ7/eos9gbDVpoiIiIjIbycU+gYcUMCt8A4E8gAAAABJRU5ErkJggg=="  class="icons"> Характеристики</button></a>
+          <a class="nav-link" href="#">
+            <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" id="abc" ><i class="fas fa-receipt"></i> Характеристики</button></a>
         </li>
         
           
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" id="abc" ><img src="data:image/png;base64,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" class="icons"> Продажа</button>
+              <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" id="abc" >
+                  <i class="fas fa-money-bill-alt"></i> Продажа</button>
           </a>
           <div class="dropdown-menu " style="background-image:url(http://user-master.org/media/k2/items/cache/c10c64c27e0606d1654b81b9bb482558_XL.jpg) " aria-labelledby="navbarDropdown">
-            <a class="dropdown-item"  href="#" ><img src="https://image.flaticon.com/icons/svg/171/171239.svg" height="35px">  Авто</a>
-            <a class="dropdown-item"  href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVOSURBVGhD7VldaFtlGD7t1sS63vh3J17OokxEr0RhCCL+XKiwgqLtSbcZf1rEtbZb25OcC7fOnpNO0PlTFd3cLLaVtlZXxTZJu6RFZLhN6pUXIiiTCerNZOvP9/l8yZs0P2/CSXMyysgDD0lz3jd5nvN97/ud76tWRRVVVHHtYDIS75uILL4wNXXmevrIZcia5oB1ny9gGz7DOukLWCN4/5YvaOtNTaNbKKg8TETivZORBak4EV74ezK8MDA1E7uNLpeNlj7rYT1g/QThMpvWqh6091BY+ZgMx59PGckwtKIMUcgGIWt0wzoEwYIz0WJYLRToDkYWF+sh+p9cM0lD8ccorGToht2ZbyBpojUYeobC3AVqxGaNRBb++DoWu4HCHEM3Q40wspJnwrCvtBr2LgpzH6omEtOJMYPROkFhjoG7HsozkTSyn0KKoqwGoGqCNZLkKxTmCDAS5YxglAYppCB0I/Qk8l+jPzcGCH4cXez3HBOqVgReHZuBkB95I9Zfz3Xa2ygsDwkTmH7IH6GPNg5VE2o6cWYmZhdfpbCi0AP2DGeEeJzCsrBuIjFyc/Rx+YD4NhqJLENoDB0UUhBYN47kiM8iRubYy+bRBgrPMpG4jhtBl9zB5Gz8Rc4MGkPROazWiEzhHCH2oqoZmO7ONJG4Zljv0Fe5B/XowpqJxLspJA+tfdZDmcJKZUvAeoq+yl1gPfGz0yy8cIBCNDFcd6cY2/KomjKFupYjGvavfv9QHX2t+5iIxvcWGJleMVxriiFNyCFNLg7d8ycr0DGtJ+gnKweMwG4U+1qmkaVT7VK+r63zgxrZ/XoPI9ABDfsw/VTlATOtMLCqTJz7Zn9CeJYRcOnj23mhBYiCv4zXdvqJq4cvIzF9abp9jTMhP62Vy5Ftsqu/N1PoWPOB/pt8xuAOnxHaiz3JELrWV+han6ND9TWbb7i2bSgJYqw2oOqBMyGjXinnvfLcF3fJ1qCF6WJNN5mmh1I3D8Qpz3bxYY0oZiLF6GcP/OY3zQrtOsuEGNm604mJFMW8t41SNxfUYhd+9/5lkaqPIiYUxZxXiHlPF6VvDqgeTx1Gdh3skT9/1CivhBtYA7nEyAzKUc2dg4ZyoLanMLGc6kQpdvf3yPPjO1jxuRRznm9lTCt5x+ka9EDIj9FYzTWRoupOMyd2/seJzyWm2S8yVncvffXVA/bY+2CCOQlZJ9aEf3XTuht3vJMTn0tMs8uI7ZBSq6GfqSwgMMgJzyQWtUvq8I1SNBT3YU48RxiaFqcbbqHUSkCdSdk2JzyL6lQEXYySElB3GWZOcsI5YqpdQPyDlO4eTNOsxWr8His8i6pm+CdVMa15cbd/4IRzROwKplq3a1MNJrYmz2Y54Zm0hB4MPUtpLES0/laIu8gJL0QYGpdntPKeBHbtG6zHdJrkhWfSEphOL1FaUYio9xG1IHKiCxHmP6H00rHHHLwRa0SMF55NxBXc4nKAkSOc4GIUc9elm4djqFM9PEp/z4lmeJDSHIPq5SwnuBBh/k1Kdw6fMbA7LRTvaXTyjnNg9m1KKRky6mmEuEuc6AIcpVTngMDhpAn7An2k+c3QzTlGjquWTJc3BIjz5YgtSIzgIUpzDhgYVWJR6GstgYFEP9f7rLa0CcMed+u/SqqQOeGZxMgti9Oe7ZTiHDDQlRKtzGBapU9BMFrfubm7U60VQs9zBlJU6wmFlwZ1qIy7fjYlPk3Dmq3E7i6xvjDFrxZFOe9Jn5NtCAkzAasDI6IOA47h9Wm1ONJl14GRqZNzXj/ET+ERJYZROIrpdAddrqKKKqq4ZqBp/wM78GacActwcQAAAABJRU5ErkJggg==" height="35px" id="abc"> Запчасти</a>
+            <a class="dropdown-item"  href="#" ><i class="fas fa-car"></i>  Авто</a>
+            <a class="dropdown-item"  href="#"><i class="fas fa-screwdriver"></i> Запчасти</a>
             <div class="dropdown-divider"></div>
           </div>
         </li>
@@ -46,12 +55,12 @@
        </ul>
        
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="login" placeholder="Логин" aria-label="Login" >
+        <input class="form-control mr-sm-2" type="login" placeholder="Логин" aria-label="Login" v-model="hellow" id="app1" >
         <input class="form-control mr-sm-2" type="search" placeholder="Пароль" aria-label="Password">
       </form>
 
-        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" id="abc">Вход</button>
-        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" style="margin-left: 5px;" id="abc" >Регистрация</button>
+        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" id="abc"><i class="fas fa-sign-in-alt"></i> Вход</button>
+        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" style="margin-left: 5px;" id="abc" ><i class="fas fa-registered"></i> Регистрация</button>
         
     </div>
   </nav>
@@ -62,7 +71,7 @@
 
 
 
-<div class="titles back1" > 
+<div class="titles back1 " id="app" > {{pref}}{{hellow}}
    </div>
 
 <br><br>
@@ -90,35 +99,7 @@
        нескольких тысяч рублей до нескольких тысяч долларов.
 
 </div>
-<!-- 
-<div class="row">
-    <div class=" col-md-1 col-sm-0"></div>
-    <div class="qwe col-md-10 col-sm-12" >ЗАЗ-965 «Запорожец» — советский микролитражный 
-        автомобиль, выпускавшийся с 1960 по 1963 год. 
-        ЗАЗ-965А «Запорожец» — модификация с двигателем 
-        мощностью 27 л. с., выпускавшаяся с ноября 1962 
-        по 1969 год. Всего было выпущено 322 166 
-        автомобилей всех модификаций. На момент своего появления в 1960 году 
-        «Запорожец» стоил 18 000 дореформенных рублей —
-         впрочем, реально в том году была выпущена лишь
-         небольшая партия автомобилей, в основном 
-         разошедшихся по заводам-смежникам ЗАЗа, 
-         первые же товарные автомобили пошли в продажу 
-         уже после денежной реформы, по цене 1 800 руб. 
-         По легенде, цена определялась как совокупная 
-         стоимость 1 000 бутылок водки (по 1,80 руб.). 
-         Со средней заработной платой в СССР начала 
-         1960-х годов эта величина соотносилась примерно 
-          20:1, то есть, «Запорожец» можно было купить 
-          примерно за 20 средних размеров заработной платы 
-          по стране.Современная стоимость ЗАЗ-965 на вторичном рынке очень сильно 
-          разнится в зависимости от продавца и сохранности автомобиля, составляя от
-           нескольких тысяч рублей до нескольких тысяч долларов.</div>
-    <div class=" col-md-1 col-sm-0"></div>
-
-</div></div> -->
 <br>
-
 
 
 
@@ -129,6 +110,7 @@
     <script src="main.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
