@@ -34,8 +34,7 @@ var app2 = new Vue({
   var d = new Date();
   var h = d.getHours();
   app1.$watch('hellow', function (newValue, oldValue) {
-    // Этот коллбэк будет вызван, когда изменится `vm.a`
-    if (da.hellow!='') 
+       if (da.hellow!='') 
       { if (h<12 && h>5){da.pref='Доброе утро, ';}
         if (h<17 && h>=12){da.pref='Добрый день, ';}
         if ( h>=17){da.pref='Добрый вечер, ';}
@@ -43,21 +42,25 @@ var app2 = new Vue({
     else {da.pref='';}
   })
  
-  
-
 var app3 = new Vue({
   el: '#app3',
   data : {
       show:false,
-      show1:true   },
+      show1:true,
+      show2:false   },
   methods:{ 
       shower: function () { 
-              app3.show= !app3.show; 
+                if (app3.show1==true){
               app3.show1= !app3.show1;
+              setTimeout('app3.show = !app3.show;', 1000);}
+                else {
+                app3.show= !app3.show;
+                setTimeout('app3.show1 = !app3.show1;', 1000);
+                     }
               }
-      
-  }
-                  
+     
+}
+                 
   }) 
 
   

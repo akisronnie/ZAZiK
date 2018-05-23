@@ -17,8 +17,8 @@
      
 <div id="app3">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainmenu">
-    <a class="navbar-brand tilt" href="#" id="app-2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Seattle_redhawks_logo.png"  width="40" v-bind:title="message">
+    <a class="navbar-brand tilt" href="#" id="app-2" onclick="app3.shower()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Seattle_redhawks_logo.png"  width="40" v-bind:title="message" >
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,7 +37,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" id="abc" ><i class="fas fa-receipt"></i> Характеристики</button></a>
+            <button class="btn btn-outline-primary" type="submit" id="abc" @click="shower" ><i class="fas fa-receipt"></i> Характеристики</button></a>
         </li>
         
           
@@ -78,7 +78,33 @@
 <br><br>
 
 
-<aside id="box" v-show="show"  transition="slide" class="boxx" style="background-image: url(http://aslania.com/wp-content/uploads/2018/03/black-background-wallpaper-4.jpg)"> 
+
+
+<aside id="box" v-show="show1"  transition="slide" class="boxx" style="background-image: url(http://aslania.com/wp-content/uploads/2018/03/black-background-wallpaper-4.jpg)">
+  ЗАЗ-965 «Запорожец» — советский микролитражный 
+    автомобиль, выпускавшийся с 1960 по 1963 год. <img class="pic2" src="img/8.jpg">
+    ЗАЗ-965А «Запорожец» — модификация с двигателем 
+    мощностью 27 л. с., выпускавшаяся с ноября 1962 
+    по 1969 год. Всего было выпущено 322 166 <img class="pic1" src="img/7.jpg">
+    автомобилей всех модификаций. На момент своего появления в 1960 году 
+    «Запорожец» стоил 18 000 дореформенных рублей —
+     впрочем, реально в том году была выпущена лишь
+     небольшая партия автомобилей, в основном 
+     разошедшихся по заводам-смежникам ЗАЗа, <img class="pic2" src="img/5.jpg">
+     первые же товарные автомобили пошли в продажу 
+     уже после денежной реформы, по цене 1 800 руб. 
+     По легенде, цена определялась как совокупная 
+     стоимость 1 000 бутылок водки (по 1,80 руб.). 
+     Со средней заработной платой в СССР начала <img class="pic1" src="img/6.jpg">
+     1960-х годов эта величина соотносилась примерно 
+      20:1, то есть, «Запорожец» можно было купить 
+      примерно за 20 средних размеров заработной платы 
+      по стране.Современная стоимость ЗАЗ-965 на вторичном рынке очень сильно 
+      разнится в зависимости от продавца и сохранности автомобиля, составляя от
+       нескольких тысяч рублей до нескольких тысяч долларов.
+
+</aside>
+<aside id="box" v-show="show"  transition="slide1" class="boxx" style="background-image: url(http://aslania.com/wp-content/uploads/2018/03/black-background-wallpaper-4.jpg)"> 
   Во второй половине 1950-х годов уровень жизни
   населения СССР стал быстро расти: увеличивались доходы, началось массовое строительство жилья, значительно
    расширились ассортимент и объёмы выпуска товаров народного потребления. Между тем, основным видом 
@@ -87,7 +113,7 @@
    На этом фоне встал вопрос о массовом выпуске компактного и доступного автомобиля для продажи в личное 
    пользование — лёгкого, рассчитанного на двух-четырёх человек, недорогого, простого в производстве, 
    удобного и экономичного в эксплуатации. Данная тема стала предметом широкой "общественной дискуссии", 
-   активно обсуждалась в печати тех лет.<img class="pic1" src="http://zaz965.fitotex.com.ua/history/960.jpg">
+   активно обсуждалась в печати тех лет.<img class="pic1" src="img/1.jpg">
  Бывшая из серийных советских «легковушек» наиболее близкой к приведённой выше характеристике модель — 
  «Москвич-401» — к тому времени успела основательно устареть, а в 1956 году была снята с производства. 
  Следующая модель МЗМА — «Москвич-402» — оказалась ощутимо крупнее, мощнее и комфортабельнее своего 
@@ -103,7 +129,7 @@
  достаточно длительную эксплуатацию в отечественных условиях и обслуживание главным образом силами самого 
  владельца. Работы по проектированию автомобиля осуществлялись МЗМА («Москвич») совместно с автомобильным 
  институтом НАМИ.
- <img class="pic2" src="http://zaz965.fitotex.com.ua/history/zaz_965_1.jpg">
+ <img class="pic2" src="img/2.jpg">
  Изучение опыта мирового автомобилестроения уже на тот момент позволяло прийти ко вполне однозначному выводу:
   микролитражка не может быть просто уменьшенной копией своих «больших собратьев». Необходимо напомнить, что 
    то время большинство автомобилей имело двигатель спереди и задний ведущий мост — так называемая 
@@ -129,7 +155,7 @@
       строилась на основе заднемоторной компоновки, недостатки которой при характерных для микролитражек тех
        лет скоростях проявлялись лишь в малой степени. Именно на ней решили остановиться и создатели
         отечественного микроавтомобиля.
-        <img class="pic2" src="http://zaz965.fitotex.com.ua/history/zaz_965_3.jpg">
+        <img class="pic2" src="img/3.jpg">
  Созданию «Запорожца» предшествовала разработка целого ряда прототипов, разработка и постройка которых 
  дали возможность определиться с требованиями к автомобилю этого класса, отработать отдельные элементы 
  конструкции и дизайна — здесь можно назвать такие разработки, как «Белка» ИМЗ-НАМИ-А50 1955 года 
@@ -155,7 +181,7 @@
      алеко не всех). Остальные прототипы также были по сути экспериментальными образцами, призванными 
      «нащупать» путь для дальнейших работ (например, на НАМИ-031 прорабатывалась конструкция торсионной
       передней подвески).
-      <img class="pic1" src="http://zaz965.fitotex.com.ua/history/zaz_965_4.jpg">
+      <img class="pic1" src="img/4.jpg">
  Главное же — стало ясно, что микролитражный автомобиль будет принципиально отличаться от уже освоенных в 
  производстве моделей не только по конструктивным решениям, но и по технологии производства, в первую 
  очередь самой сложной в изготовлении, наиболее дорогостоящей и трудоёмкой детали — несущего кузова. 
@@ -194,52 +220,23 @@
  конструкции или дизайна, вынудило создателей автомобиля обратиться к изучению иностранных аналогов, 
  причём основном внимание обращалось именно на вопросы технологического характера.
 </aside>
-
-
-
-
-<div class="qwe" v-show="show1" >
-  ЗАЗ-965 «Запорожец» — советский микролитражный 
-    автомобиль, выпускавшийся с 1960 по 1963 год. 
-    ЗАЗ-965А «Запорожец» — модификация с двигателем 
-    мощностью 27 л. с., выпускавшаяся с ноября 1962 
-    по 1969 год. Всего было выпущено 322 166 
-    автомобилей всех модификаций. На момент своего появления в 1960 году 
-    «Запорожец» стоил 18 000 дореформенных рублей —
-     впрочем, реально в том году была выпущена лишь
-     небольшая партия автомобилей, в основном 
-     разошедшихся по заводам-смежникам ЗАЗа, 
-     первые же товарные автомобили пошли в продажу 
-     уже после денежной реформы, по цене 1 800 руб. 
-     По легенде, цена определялась как совокупная 
-     стоимость 1 000 бутылок водки (по 1,80 руб.). 
-     Со средней заработной платой в СССР начала 
-     1960-х годов эта величина соотносилась примерно 
-      20:1, то есть, «Запорожец» можно было купить 
-      примерно за 20 средних размеров заработной платы 
-      по стране.Современная стоимость ЗАЗ-965 на вторичном рынке очень сильно 
-      разнится в зависимости от продавца и сохранности автомобиля, составляя от
-       нескольких тысяч рублей до нескольких тысяч долларов.
-
-</div></div>
+<aside id="box" v-show="show2"  transition="slide1" class="boxx" style="background-image: url(http://aslania.com/wp-content/uploads/2018/03/black-background-wallpaper-4.jpg)"> 
+  
+   активно обсуждалась в печати тех лет.<img class="pic1" src="img/1.jpg">
+ 
+</aside>
+</div>
 
 
 <br>
+
+
+
 <div class="col-md-12 bottom">Все права защищены Зазоводами 2018</div>
-
-
-
-
-
 <script src="vue.js"></script>
 <script src="main.js"></script>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    
-  </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
 </html>
