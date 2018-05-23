@@ -91,7 +91,7 @@ aside h2{
 
 
 .slide-transition {
-    transition: all .3s cubic-bezier(.65, .05, .36, 1);
+    transition: all 2s cubic-bezier(.65, .05, .36, 1);
 }
 
 .slide-enter, .slide-leave {

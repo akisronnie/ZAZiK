@@ -38,8 +38,8 @@ var app2 = new Vue({
     if (da.hellow!='') 
       { if (h<12 && h>5){da.pref='Доброе утро, ';}
         if (h<17 && h>=12){da.pref='Добрый день, ';}
-        if (h<23 && h>=17){da.pref='Добрый вечер, ';}
-        if (h<5 && h>=23){da.pref='Доброй ночи, ';}}
+        if ( h>=17){da.pref='Добрый вечер, ';}
+        if (h<5 && h>=0){da.pref='Доброй ночи, ';}}
     else {da.pref='';}
   })
  
